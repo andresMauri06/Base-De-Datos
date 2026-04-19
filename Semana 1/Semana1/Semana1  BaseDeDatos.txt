@@ -1,0 +1,21 @@
+S01 - IntroduccionBaseDatos
+¿Qué es una base de datos?
+
+Una base de datos es un conjunto organizado de información (datos) que se almacena de forma estructurada para que sea fácil
+acceder, gestionar y actualizar.
+
+Conceptos clave desde cero
+
+Tabla: Es como una hoja de cálculo. Tiene columnas (campos) y filas (registros).
+Registro: Una fila con datos de una sola "cosa" (ej: un cliente, un libro, un pedido).
+Campo: Una columna que representa un tipo de dato (ej: nombre, fecha, precio).
+
+Conceptos clave desde cero
+
+Clave primaria: Un campo único que identifica cada registro (ej: DNI, ID, ISBN).
+Consulta (query): Preguntas que haces a la base de datos (ej: "Dame todos los clientes").
+
+Tipos de bases de datos
+
+Relacional (SQL): Muy estructurada. Usa tablas y relaciones. Ej: MySQL, PostgreSQL, SQL Server.
+No relacional (NoSQL): Más flexible. Útil para datos no estructurados. Ej: MongoDB, Firebase.
