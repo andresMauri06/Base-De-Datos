@@ -1,0 +1,49 @@
+S02 - Mal uso de llaves primarias (PK) y llaves foráneas (FK)
+
+¿Qué es una llave primaria (PK) en una base de datos?
+Una llave primaria (PK, Primary Key) es un campo o conjunto de campos que identifica 
+de manera única cada registro de una tabla. No se puede repetir y no puede contener 
+valores nulos. Su función principal es diferenciar cada fila de las demás.
+
+¿Cuál es la función de una llave foránea (FK) en una base de datos?
+La llave foránea (FK, Foreign Key) es un campo que permite relacionar una tabla con otra. 
+Su función es conectar los datos entre tablas y asegurar que la información tenga 
+coherencia, manteniendo la integridad referencial de la base de datos.
+
+¿Qué problemas pueden surgir si no se utilizan correctamente las llaves primarias y foráneas en una base de datos?
+Si no se utilizan correctamente, pueden surgir problemas como registros duplicados, datos huérfanos 
+(datos que hacen referencia a registros inexistentes), errores en las consultas entre tablas, pérdida 
+de integridad de los datos y dificultad para actualizar o eliminar información de forma segura.
+
+Utilidad
+
+¿Cómo ayuda una llave primaria (PK) a mantener la integridad de los datos en una tabla?
+Una llave primaria ayuda a mantener la integridad de los datos porque garantiza que cada registro 
+sea único y no se repita. Al no permitir valores duplicados ni nulos, asegura que cada fila pueda 
+identificarse correctamente, evitando confusiones, errores y registros inconsistentes dentro de la tabla.
+
+¿Por qué es importante usar llaves foráneas (FK) para conectar tablas en una base de datos?
+Es importante usar llaves foráneas porque permiten establecer relaciones entre tablas, asegurando 
+que los datos estén correctamente vinculados. Además, ayudan a mantener la integridad referencial, 
+evitando que se ingresen datos que no tengan correspondencia en otra tabla, lo que mejora la consistencia 
+de la información.
+
+¿De qué manera el uso adecuado de llaves primarias y foráneas contribuye a evitar redundancia en una base de datos?
+El uso adecuado de llaves primarias y foráneas permite organizar la información en diferentes tablas relacionadas, 
+evitando repetir datos innecesariamente. En lugar de duplicar información, se almacenan referencias mediante las llaves, 
+lo que reduce la redundancia, optimiza el almacenamiento y facilita la actualización de los datos sin inconsistencias.
+
+¿Cómo ayuda una llave primaria (PK) a mantener la integridad de los datos en una tabla?
+Una llave primaria ayuda a mantener la integridad de los datos porque garantiza que cada registro sea único y no se repita. 
+Al no permitir valores duplicados ni nulos, asegura que cada fila pueda identificarse correctamente, evitando confusiones, 
+errores y registros inconsistentes dentro de la tabla.
+
+¿Por qué es importante usar llaves foráneas (FK) para conectar tablas en una base de datos?
+Es importante usar llaves foráneas porque permiten establecer relaciones entre tablas, asegurando que los datos estén 
+correctamente vinculados. Además, ayudan a mantener la integridad referencial, evitando que se ingresen datos que no tengan 
+correspondencia en otra tabla, lo que mejora la consistencia de la información.
+
+¿De qué manera el uso adecuado de llaves primarias y foráneas contribuye a evitar redundancia en una base de datos?
+El uso adecuado de llaves primarias y foráneas permite organizar la información en diferentes tablas relacionadas, evitando 
+repetir datos innecesariamente. En lugar de duplicar información, se almacenan referencias mediante las llaves, lo que reduce
+ la redundancia, optimiza el almacenamiento y facilita la actualización de los datos sin inconsistencias.
