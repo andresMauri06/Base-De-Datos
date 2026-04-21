@@ -1,0 +1,153 @@
+s04 - Operadores lógicos
+📚 Conocimientos previos
+
+❓ ¿Cómo verificarías si un campo en una consulta SQL tiene un valor nulo?
+Para verificar si un campo es nulo se usa la condición IS NULL (o IS NOT NULL si quieres lo contrario) 🔍.
+
+👉 Ejemplo:
+
+SELECT * FROM clientes
+WHERE telefono IS NULL;
+
+Esto muestra los registros donde el campo está vacío (sin valor) ❌.
+
+📏 ¿Para qué sirve el operador BETWEEN en SQL?
+El operador BETWEEN se usa para filtrar valores dentro de un rango específico 🎯.
+
+👉 Ejemplo:
+
+SELECT * FROM productos
+WHERE precio BETWEEN 10 AND 50;
+
+Esto devuelve productos con precios entre 10 y 50 (incluyendo ambos) ✔️.
+
+📊 ¿Qué hace la cláusula GROUP BY en una consulta SQL?
+La cláusula GROUP BY agrupa filas que tienen valores iguales en una columna 🧩.
+Se usa junto con funciones como COUNT, SUM, AVG, etc.
+
+👉 Ejemplo:
+
+SELECT ciudad, COUNT(*) 
+FROM clientes
+GROUP BY ciudad;
+
+Esto cuenta cuántos clientes hay por cada ciudad 📍.
+
+⚙️ Utilidad
+
+🔎 ¿Cómo puede ser útil el operador LIKE en una consulta SQL?
+El operador LIKE permite buscar patrones dentro de los datos 🧩.
+Es útil cuando no conoces el valor exacto y quieres encontrar coincidencias parciales.
+
+👉 Ejemplo:
+
+SELECT * FROM clientes
+WHERE nombre LIKE 'A%';
+
+Esto busca nombres que empiezan con “A” 🔤.
+
+📊 ¿En qué situación es útil la cláusula HAVING en SQL?
+La cláusula HAVING se usa para filtrar resultados después de aplicar funciones de agrupación 📈 (como COUNT o SUM).
+Es útil cuando quieres poner condiciones a los datos ya agrupados.
+
+👉 Ejemplo:
+
+SELECT ciudad, COUNT(*) 
+FROM clientes
+GROUP BY ciudad
+HAVING COUNT(*) > 5;
+
+Esto muestra solo las ciudades con más de 5 clientes 🏙️.
+
+🔢 ¿Para qué sirve la función COUNT() en una consulta SQL?
+La función COUNT() sirve para contar registros 🔢 que cumplen una condición o simplemente el total de filas.
+
+👉 Ejemplo:
+
+SELECT COUNT(*) FROM clientes;
+
+Esto cuenta todos los clientes ✔️.
+
+📌 IS NULL
+
+Se usa para comprobar si un campo no tiene valor (NULL), ya que en SQL no se puede usar = para comparar con NULL.
+👉 También existe IS NOT NULL para verificar que sí tiene valor.
+
+🔎 LIKE
+
+Se usa para buscar coincidencias parciales en textos usando comodines:
+
+% → cualquier cantidad de caracteres
+_ → un solo carácter
+👉 Ideal para búsquedas flexibles (nombres, correos, etc.).
+📋 IN
+
+Se usa para comparar un valor con varios posibles en una lista, evitando múltiples condiciones OR.
+👉 Hace las consultas más simples y legibles.
+
+📏 BETWEEN
+
+Se usa para filtrar valores dentro de un rango, incluyendo los límites (inicio y fin).
+👉 Funciona con números, fechas y textos.
+
+⚖️ Lógica de Tres Valores
+
+SQL evalúa condiciones con tres resultados posibles:
+
+TRUE (verdadero) ✔️
+FALSE (falso) ❌
+UNKNOWN (desconocido, cuando hay NULL) ⚠️
+👉 Esto afecta cómo funcionan los filtros en WHERE.
+🔢 Funciones de Grupo
+
+Realizan cálculos sobre conjuntos de filas:
+
+COUNT() → cuenta registros
+SUM() → suma valores
+AVG() → promedio
+MAX() / MIN() → valores máximo y mínimo
+👉 Se usan mucho en análisis de datos.
+🧩 Cláusula GROUP BY
+
+Agrupa filas con valores iguales en columnas específicas.
+👉 Se usa junto con funciones de grupo para obtener resultados resumidos.
+
+📊 Cláusula HAVING
+
+Filtra los resultados después de agruparlos (a diferencia de WHERE, que filtra antes).
+👉 Se usa con funciones como COUNT, SUM, etc.
+
+🔄 Uso de CASE
+
+Permite aplicar lógica condicional dentro de una consulta (tipo “si pasa esto, entonces esto otro”).
+👉 Muy útil para clasificar o transformar datos en los resultados.
+
+💡 Resumen rápido:
+
+IS NULL → verifica valores vacíos
+LIKE → busca patrones
+IN → compara con lista
+BETWEEN → rango
+GROUP BY + funciones → agrupan y calculan
+HAVING → filtra grupos
+CASE → condiciones
+
+🔚 Cierre
+
+🔎 ¿Para qué se usa el operador LIKE en SQL?
+El operador LIKE se usa para buscar patrones dentro de los datos de tipo texto 🧩. Permite encontrar 
+coincidencias parciales utilizando comodines como % (varios caracteres) y _ (un solo carácter), siendo 
+muy útil en búsquedas flexibles.
+
+📊 ¿Qué papel juega la cláusula HAVING en una consulta SQL?
+La cláusula HAVING se utiliza para filtrar resultados después de que los datos han sido agrupados 📈. 
+Es especialmente útil cuando se aplican funciones de agregación como COUNT o SUM, permitiendo establecer 
+condiciones sobre esos resultados.
+
+🔢 ¿Cómo te ayuda la función COUNT() en el análisis de datos en SQL?
+La función COUNT() permite contar registros 🔢, lo que ayuda a analizar la cantidad de datos que cumplen 
+ciertas condiciones. Es fundamental para generar estadísticas, reportes y obtener información resumida.
+
+💡 Conclusión:
+Estas herramientas permiten buscar 🔍, filtrar 📊 y analizar 🔢 datos de manera eficiente, facilitando la 
+toma de decisiones basada en información clara y organizada.
