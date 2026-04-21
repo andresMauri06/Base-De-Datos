@@ -1,0 +1,84 @@
+S03 - Introducción al SQL Server
+
+📚 Conocimientos previos
+
+🗄️ ¿Qué es una base de datos y qué propósito cumple en SQL Server?
+Una base de datos es un conjunto organizado de información que se almacena de 
+forma estructurada. En SQL Server, su propósito es guardar, gestionar y permitir 
+el acceso a los datos de manera eficiente, segura y rápida ⚡, facilitando consultas, 
+actualizaciones y análisis.
+
+🔗 ¿Cuál es la diferencia entre una instrucción INNER JOIN y una instrucción LEFT JOIN?
+
+INNER JOIN 🤝: Devuelve solo los registros que coinciden en ambas tablas.
+LEFT JOIN ⬅️: Devuelve todos los registros de la tabla izquierda y los coincidentes de 
+la derecha; si no hay coincidencia, muestra valores NULL.
+
+👉 En resumen:
+
+INNER JOIN = solo coincidencias ✔️
+LEFT JOIN = todo de la izquierda + coincidencias ✔️❌
+
+📊 ¿Qué función cumple la cláusula ORDER BY en una consulta SQL y cómo se usa para ordenar los resultados?
+La cláusula ORDER BY se usa para ordenar los resultados de una consulta.
+
+📌 Puede ordenar:
+
+Ascendente (ASC 🔼) → de menor a mayor
+Descendente (DESC 🔽) → de mayor a menor
+
+👉 Ejemplo:
+
+SELECT nombre FROM estudiantes
+ORDER BY nombre ASC;
+
+⚙️ Utilidad
+
+📊 ¿Cómo puede SQL Server ayudar a mejorar la gestión y el análisis de grandes volúmenes de datos en una empresa?
+SQL Server permite almacenar grandes cantidades de datos de forma organizada 🗂️ y segura 🔐. Además, cuenta con 
+herramientas para analizar información rápidamente ⚡, generar reportes 📈 y tomar decisiones basadas en datos 
+confiables.
+
+🔍 ¿De qué manera las consultas SQL permiten obtener información específica a partir de una base de datos relacional?
+Las consultas SQL permiten filtrar, buscar y combinar datos según ciertas condiciones 🎯. Por ejemplo, usando SELECT, 
+WHERE o JOIN, se puede obtener exactamente la información necesaria sin revisar toda la base de datos.
+
+🔗 ¿Cómo facilita SQL Server la integración de datos provenientes de diferentes fuentes en un entorno empresarial?
+SQL Server permite integrar datos de distintas fuentes (otros sistemas, archivos, aplicaciones) 🔄 mediante herramientas 
+de importación y conexión. Esto ayuda a centralizar la información en un solo lugar, facilitando su análisis y uso.
+
+💡 Idea clave:
+SQL Server facilita la gestión, análisis e integración de grandes volúmenes de datos al proporcionar herramientas 
+avanzadas para almacenar, consultar y manipular información de manera eficiente 🚀.
+
+🧩 Introducción al Modelo Entidad-Relación (ER)
+
+El Modelo Entidad-Relación (ER) es una técnica que se utiliza para diseñar la estructura de una base de datos 🗄️.
+Ayuda a representar cómo se organizan los datos y cómo se relacionan entre sí.
+
+Se basa en dos conceptos principales:
+
+📦 Entidades:
+Son objetos o conceptos del mundo real que queremos guardar en la base de datos.
+👉 Ejemplos: Cliente, Producto, Pedido
+
+🔗 Relaciones:
+Indican cómo se conectan las entidades entre sí.
+👉 Ejemplo: Un Cliente compra un Producto 🛒
+
+🔚 Cierre
+
+📊 ¿Qué beneficios específicos ofrece SQL Server para la toma de decisiones empresariales basadas en datos?
+SQL Server permite analizar grandes volúmenes de información 📈 y generar reportes claros, lo que ayuda a tomar 
+decisiones más precisas y rápidas ⚡. Además, mejora la planificación y reduce riesgos al basarse en datos confiables.
+
+🧠 ¿Cómo contribuye la capacidad de realizar consultas complejas a la eficiencia en la obtención de información en SQL Server?
+Las consultas complejas permiten obtener información específica y detallada 🎯 sin necesidad de revisar toda la base de 
+datos. Esto ahorra tiempo ⏱️ y hace más eficiente el análisis de datos, combinando información de varias tablas de forma rápida.
+
+⚙️ ¿Qué impacto tiene la correcta configuración y gestión de bases de datos en el rendimiento general de SQL Server?
+Una buena configuración y gestión mejora el rendimiento 🚀, haciendo que las consultas sean más rápidas y estables. También 
+reduce errores, optimiza el uso de recursos 💻 y garantiza que el sistema funcione de manera eficiente y segura.
+
+💡 Conclusión:
+Un buen uso de SQL Server permite tomar mejores decisiones, trabajar más rápido y mantener un sistema confiable y eficiente 👍
