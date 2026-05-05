@@ -35,3 +35,44 @@ Insert into Ventas(ID_Venta,ID_Usuario,Fecha) values
 Insert into Detalle_ventas(ID_Detalle,ID_Venta,ID_Videojuego,Cantidad) Values
 (1001,101,11,2),
 (1002,102,12,4);
+
+-- Mostrar el nombre del usuario, el juego que compró, la cantidad y la fecha
+SELECT 
+    u.Nombres AS Comprador, 
+    v.Titulo AS Videojuego, 
+    dv.Cantidad, 
+    ven.Fecha AS Fecha_Compra
+FROM Usuario u
+INNER JOIN Ventas ven ON u.ID_Usuario = ven.ID_Usuario
+INNER JOIN Detalle_ventas dv ON ven.ID_Venta = dv.ID_Venta
+INNER JOIN Videojuegos v ON dv.ID_Videojuego = v.ID_Videojuego;
+
+-- Obtener videojuegos con un precio superior al promedio
+SELECT Titulo, Precio 
+FROM Videojuegos 
+WHERE Precio > (SELECT AVG(Precio) FROM Videojuegos);
+
+-- Obtener los nombres de los usuarios que han realizado al menos una compra
+SELECT Nombres, Correo 
+FROM Usuario 
+WHERE ID_Usuario IN (
+    SELECT ID_Usuario 
+    FROM Ventas
+);
+
+-- Listar los videojuegos que han sido vendidos al menos una vez en los detalles de venta
+SELECT Titulo, Plataforma 
+FROM Videojuegos vid
+WHERE EXISTS (
+    SELECT 1 
+    FROM Detalle_ventas dv 
+    WHERE dv.ID_Videojuego = vid.ID_Videojuego
+);
+
+SELECT Titulo, Plataforma 
+FROM Videojuegos vid
+WHERE NOT EXISTS (
+    SELECT 1 
+    FROM Detalle_ventas dv 
+    WHERE dv.ID_Videojuego = vid.ID_Videojuego
+	)
