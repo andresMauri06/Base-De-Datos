@@ -1,5 +1,5 @@
-Create database tienda_Videojuegos;
-Use tienda_Videojuegos;
+Create database tienda_Videojuegos1;
+Use tienda_Videojuegos1;
 Create table Usuario(
 	ID_Usuario int primary key ,
 	Nombres varchar(100),
@@ -76,3 +76,16 @@ WHERE NOT EXISTS (
     FROM Detalle_ventas dv 
     WHERE dv.ID_Videojuego = vid.ID_Videojuego
 	)
+SELECT 
+    u.Nombres,
+    u.Correo,
+    v.Titulo AS Videojuego,
+    dv.Cantidad,
+    ven.Fecha
+FROM Usuario u
+LEFT JOIN Ventas ven 
+    ON u.ID_Usuario = ven.ID_Usuario
+LEFT JOIN Detalle_ventas dv 
+    ON ven.ID_Venta = dv.ID_Venta
+LEFT JOIN Videojuegos v 
+    ON dv.ID_Videojuego = v.ID_Videojuego;
