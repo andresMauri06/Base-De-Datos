@@ -89,3 +89,29 @@ LEFT JOIN Detalle_ventas dv
     ON ven.ID_Venta = dv.ID_Venta
 LEFT JOIN Videojuegos v 
     ON dv.ID_Videojuego = v.ID_Videojuego;
+SELECT 
+    u.Nombres,
+    ven.ID_Venta,
+    ven.Fecha
+FROM Usuario u
+FULL JOIN Ventas ven
+    ON u.ID_Usuario = ven.ID_Usuario;
+SELECT 
+    u.Nombres,
+    ven.ID_Venta,
+    ven.Fecha
+FROM Usuario u
+RIGHT JOIN Ventas ven
+    ON u.ID_Usuario = ven.ID_Usuario;
+SELECT 
+    u.Nombres,
+    v.Titulo
+FROM Usuario u
+CROSS JOIN Videojuegos v;
+SELECT Nombres AS Datos
+FROM Usuario
+
+UNION
+
+SELECT Titulo
+FROM Videojuegos;
