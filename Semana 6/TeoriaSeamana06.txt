@@ -1,0 +1,76 @@
+SEMANA 06 - SUBCONSULTAS
+
+
+Conocimientos Previos
+
+¿Qué es una subconsulta y cómo se diferencia de una consulta principal en SQL?
+- Una subconsulta es una consulta SQL que está dentro de otra consulta (consulta anidada).
+- La subconsulta se ejecuta primero.
+- Su resultado se utiliza en la consulta principal (consulta padre).
+
+¿Cuál es la diferencia entre INNER JOIN y LEFT JOIN?
+- INNER JOIN: Devuelve solo las filas que coinciden en ambas tablas.
+- LEFT JOIN: Devuelve todas las filas de la tabla izquierda y las filas coincidentes de la tabla derecha. Si no hay coincidencia, muestra NULL en las columnas de la derecha.
+
+¿Qué hace el operador UNION y cómo se diferencia de UNION ALL?
+- UNION: Combina los resultados de dos o más consultas y elimina los registros duplicados.
+- UNION ALL: Combina los resultados sin eliminar duplicados. Es más rápido que UNION.
+
+Utilidad
+
+¿Cómo pueden las subconsultas ayudarte a realizar búsquedas más específicas en una base de datos?
+- Permiten filtrar datos basándose en resultados de otras consultas.
+- Útiles para comparar con promedios, máximos, mínimos o listas dinámicas.
+- Facilitan consultas complejas sin necesidad de joins muy complicados.
+
+¿En qué situaciones sería más conveniente usar un LEFT JOIN en lugar de un INNER JOIN?
+- Cuando se necesitan todos los registros de la tabla principal, aunque no tengan coincidencias en la tabla secundaria.
+- Para encontrar registros "huérfanos" (clientes sin pedidos, productos sin ventas, etc.).
+
+¿Por qué podrías optar por usar UNION ALL en lugar de UNION al combinar resultados de consultas?
+- Cuando no es necesario eliminar duplicados.
+- Cuando se busca mejor rendimiento (UNION ALL es más rápido).
+
+Subconsultas
+
+Tipos de Subconsultas
+1. Subconsulta de una sola fila (devuelve un solo valor)
+2. Subconsulta de múltiples filas (devuelve varios valores)
+3. Subconsulta correlacionada (depende de la fila actual de la consulta principal)
+4. Subconsulta en la cláusula FROM (se usa como tabla temporal)
+
+Uso de Operadores de Comparación
+- =, >, <, >=, <= 
+- IN / NOT IN
+- EXISTS / NOT EXISTS
+- ANY / ALL
+
+Consultas a Múltiples Tablas con JOIN
+
+Tipos de JOIN
+- INNER JOIN → Solo las filas que coinciden en ambas tablas
+- LEFT JOIN → Todas las filas de la tabla izquierda
+- RIGHT JOIN → Todas las filas de la tabla derecha
+- FULL OUTER JOIN → Todas las filas de ambas tablas
+- CROSS JOIN → Producto cartesiano (todas las combinaciones posibles)
+
+Unión de Tablas con UNION
+- Se utiliza para combinar resultados de dos o más consultas SELECT.
+- Las consultas deben tener el mismo número de columnas y tipos de datos compatibles.
+- UNION elimina duplicados.
+- UNION ALL mantiene todos los registros (incluidos duplicados).
+
+Cierre
+
+¿Cómo afectan las subconsultas a la eficiencia de una consulta en comparación con los JOIN?
+- Las subconsultas pueden ser menos eficientes, especialmente las correlacionadas.
+- Los JOINs suelen ser más optimizados por el motor de la base de datos.
+
+¿Qué impacto tiene el uso de diferentes tipos de JOIN en el resultado final de una consulta?
+- INNER JOIN: solo muestra datos relacionados.
+- LEFT JOIN: muestra todos los registros de la tabla principal.
+- FULL JOIN: muestra todo (coincidencias y no coincidencias).
+
+¿Cómo influye la elección entre UNION y UNION ALL en la presentación de los resultados combinados?
+- UNION: Resultado limpio (sin duplicados) pero más lento.
+- UNION ALL: Más rápido, pero puede incluir registros duplicados.
