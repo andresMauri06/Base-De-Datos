@@ -1,43 +1,90 @@
-Create database Practica08; 
-use Practica08;
+CREATE DATABASE Practica08;
+USE Practica08;
 
-CREATE TABLE Cuentas (
+-- Tabla de cuentas
+CREATE TABLE  Cuentas (
     IdCuenta INT PRIMARY KEY,
-    Nombre VARCHAR(50),
-    Saldo DECIMAL(10,2)
+    Nombre VARCHAR(50) NOT NULL,
+    Saldo DECIMAL(10,2) NOT NULL DEFAULT 0.00
 );
 
+-- Insertar datos iniciales
 INSERT INTO Cuentas (IdCuenta, Nombre, Saldo)
-VALUES
-(1, 'Juan', 1000),
-(2, 'Maria', 500);
+VALUES 
+(1, 'Juan', 1000.00),
+(2, 'Maria', 500.00)
 
 SELECT * FROM Cuentas;
 
-BEGIN TRY
+CREATE FUNCTION fn_ObtenerSaldo(@IdCuenta INT)
+RETURNS DECIMAL(10,2)
+AS
+BEGIN
+    DECLARE @Saldo DECIMAL(10,2);
 
-    UPDATE Cuentas
-    SET Saldo = Saldo - 200
-    WHERE IdCuenta = 1;
+    SELECT @Saldo = Saldo 
+    FROM Cuentas 
+    WHERE IdCuenta = @IdCuenta;
 
-    UPDATE Cuentas
-    SET Saldo = Saldo + 200
-    WHERE IdCuenta = 2;
+    RETURN ISNULL(@Saldo, 0.00);
+END;
+GO
 
-    COMMIT TRANSACTION;
-	PRINT 'Transferencia realizada correctamente';
+CREATE PROCEDURE sp_TransferirDinero
+    @Origen INT,
+    @Destino INT,
+    @Monto DECIMAL(10,2)
+AS
+BEGIN
+    BEGIN TRY
+        BEGIN TRANSACTION;
 
-END TRY
+        UPDATE Cuentas SET Saldo = Saldo - @Monto WHERE IdCuenta = @Origen;
+        UPDATE Cuentas SET Saldo = Saldo + @Monto WHERE IdCuenta = @Destino;
 
-SELECT * FROM Cuentas;
+        COMMIT TRANSACTION;
 
-BEGIN CATCH;
+        SELECT 'Transferencia realizada correctamente' AS Resultado;
+    END TRY
+    BEGIN CATCH
+        ROLLBACK TRANSACTION;
+        SELECT 'Error en la transferencia: ' + ERROR_MESSAGE() AS Resultado;
+    END CATCH
+END;
+GO
 
-    ROLLBACK TRANSACTION;
 
-    PRINT 'Error en la transacción';
-    PRINT ERROR_MESSAGE();
+CREATE PROCEDURE sp_ConsultarCuenta
+    @IdCuenta INT
+AS
+BEGIN
+    SELECT IdCuenta, Nombre, Saldo 
+    FROM Cuentas 
+    WHERE IdCuenta = @IdCuenta;
+END;
+GO
 
-END CATCH;
+CREATE PROCEDURE sp_Depositar
+    @IdCuenta INT,
+    @Monto DECIMAL(10,2)
+AS
+BEGIN
+    UPDATE Cuentas 
+    SET Saldo = Saldo + @Monto 
+    WHERE IdCuenta = @IdCuenta;
 
-SELECT * FROM Cuentas;
+    SELECT 'Depósito realizado correctamente' AS Resultado;
+END;
+GO
+
+PRINT '=== Estado Inicial ===';
+EXEC sp_ConsultarCuenta 1;
+EXEC sp_ConsultarCuenta 2;
+
+EXEC sp_TransferirDinero 1, 2, 200.00;
+
+PRINT '=== Estado Final ===';
+EXEC sp_ConsultarCuenta 1;
+EXEC sp_ConsultarCuenta 2;
+
+SELECT dbo.fn_ObtenerSaldo(1) AS Saldo_Juan;
