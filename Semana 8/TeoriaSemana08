@@ -1,0 +1,129 @@
+Semana 08: Procedimientos Almacenados y Funciones en SQL Server
+
+Conocimientos Previos
+
+Procedimiento Almacenado (Stored Procedure)
+
+* Conjunto de instrucciones SQL almacenadas en la base de datos.
+* Automatiza tareas repetitivas.
+* Mejora el rendimiento y la seguridad.
+* Permite reutilizar código.
+
+Funciones en SQL Server
+
+* Objetos que reciben parámetros y devuelven resultados.
+* Simplifican cálculos y operaciones repetitivas.
+* Ayudan a mantener consultas más organizadas.
+* Existen funciones escalares y funciones de tabla.
+
+Transacciones
+
+* Grupo de operaciones ejecutadas como una sola unidad.
+* Garantizan integridad y consistencia de datos.
+* Utilizan:
+
+  * `BEGIN TRANSACTION`
+  * `COMMIT`
+  * `ROLLBACK`
+
+---
+
+Utilidad
+
+Procedimientos Almacenados
+
+* Reducen tiempo de ejecución.
+* Mejoran organización del código.
+* Disminuyen tráfico entre aplicación y servidor.
+* Facilitan mantenimiento del sistema.
+
+Funciones
+
+* Simplifican consultas complejas.
+* Reutilizan lógica de programación.
+* Mejoran legibilidad del código.
+* Automatizan cálculos y validaciones.
+
+COMMIT y ROLLBACK
+
+* Protegen la integridad de datos.
+* Evitan errores en transacciones.
+* Permiten confirmar o deshacer cambios.
+* Aseguran operaciones confiables.
+
+---
+
+Explicación
+
+BEGIN TRANSACTION
+
+* Inicia una transacción.
+* Agrupa varias operaciones.
+* Permite controlar cambios antes de guardarlos.
+
+---
+
+BEGIN TRY / BEGIN CATCH
+
+BEGIN TRY
+
+* Contiene instrucciones a ejecutar.
+* Controla procesos principales.
+
+### BEGIN CATCH
+
+* Captura errores del bloque TRY.
+* Permite manejar excepciones.
+* Evita fallos del sistema.
+
+---
+
+COMMIT TRANSACTION
+
+* Confirma cambios realizados.
+* Guarda datos permanentemente.
+* Finaliza la transacción exitosamente.
+
+---
+
+ROLLBACK TRANSACTION
+
+* Deshace operaciones realizadas.
+* Restaura datos anteriores.
+* Se utiliza cuando ocurre un error.
+
+---
+
+# Funciones en SQL Server
+
+Funciones Escalares
+
+* Devuelven un solo valor.
+* Utilizadas en cálculos y validaciones.
+
+Funciones de Tabla
+
+* Devuelven conjuntos de datos.
+* Utilizadas en consultas complejas.
+
+---
+
+Cierre
+
+Procedimientos Almacenados
+
+* Mejor organización del código.
+* Mayor eficiencia y seguridad.
+* Reutilización de procesos.
+
+Funciones
+
+* Simplificación de operaciones.
+* Consultas más fáciles de mantener.
+* Reducción de errores.
+
+COMMIT y ROLLBACK
+
+* Mantienen consistencia de datos.
+* Garantizan integridad transaccional.
+* Mejoran confiabilidad de la base de datos.
