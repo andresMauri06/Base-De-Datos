@@ -1,0 +1,141 @@
+# Semana 09: Relaciones de Uno a Muchos y JOIN en SQL Server
+
+## Conocimientos Previos
+
+### INNER JOIN
+
+* Unión interna entre tablas.
+* Muestra únicamente registros con coincidencias en ambas tablas.
+* Relaciona claves primarias y foráneas.
+* Filtra datos relacionados.
+
+### LEFT JOIN
+
+* Unión izquierda.
+* Muestra todos los registros de la tabla principal.
+* Incluye coincidencias de la tabla secundaria.
+* Si no hay coincidencia, devuelve valores NULL.
+
+### RIGHT JOIN
+
+* Unión derecha.
+* Muestra todos los registros de la tabla derecha.
+* Incluye coincidencias de la tabla izquierda.
+* Si no existen coincidencias, aparecen valores NULL.
+
+### CROSS JOIN
+
+* Producto cartesiano.
+* Combina todas las filas de una tabla con todas las filas de otra.
+* Genera todas las combinaciones posibles.
+* Puede producir grandes cantidades de datos.
+
+---
+
+# Utilidad
+
+### INNER JOIN
+
+* Obtención de datos relacionados.
+* Filtrado de información relevante.
+* Relación entre tablas.
+* Consultas más precisas.
+
+### LEFT JOIN
+
+* Conservación de registros principales.
+* Visualización completa de la tabla izquierda.
+* Identificación de datos sin coincidencia.
+* Útil en reportes y auditorías.
+
+### RIGHT JOIN
+
+* Conservación de registros de la tabla derecha.
+* Verificación de relaciones faltantes.
+* Consultas enfocadas en la tabla secundaria.
+* Flexibilidad en relaciones.
+
+### CROSS JOIN
+
+* Generación de combinaciones.
+* Simulación de escenarios.
+* Comparación masiva de datos.
+* Uso en análisis y pruebas.
+
+---
+
+# Explicación
+
+## Relaciones de Uno a Muchos
+
+* Una fila de una tabla se relaciona con varias filas de otra tabla.
+* Uso de clave primaria y clave foránea.
+* Ejemplo:
+
+  * Un cliente puede tener muchos pedidos.
+  * Un docente puede enseñar muchos cursos.
+
+---
+
+## INNER JOIN (Unión Interna)
+
+* Devuelve registros coincidentes en ambas tablas.
+* Excluye datos sin relación.
+* Utilizado para consultas exactas y relacionadas.
+
+---
+
+## LEFT JOIN (Unión Izquierda)
+
+* Devuelve todos los registros de la tabla izquierda.
+* Incluye coincidencias de la derecha.
+* Si no hay relación, muestra NULL.
+
+---
+
+## RIGHT JOIN (Unión Derecha)
+
+* Devuelve todos los registros de la tabla derecha.
+* Incluye coincidencias de la izquierda.
+* Permite visualizar registros aunque no tengan relación.
+* Si no existen coincidencias, devuelve valores NULL.
+* Útil cuando la tabla secundaria es la más importante en la consulta.
+
+---
+
+## CROSS JOIN (Producto Cartesiano)
+
+* Une todas las filas posibles entre tablas.
+* No requiere condición de relación.
+* Genera múltiples combinaciones de datos.
+
+---
+
+# Cierre
+
+### Influencia de los JOIN en consultas SQL
+
+* El tipo de JOIN determina la cantidad de datos retornados.
+* Algunos JOIN muestran solo coincidencias.
+* Otros incluyen registros sin relación.
+* Ayudan a controlar precisión y cantidad de información.
+
+### JOIN para incluir todos los registros de una tabla
+
+* LEFT JOIN incluye todos los registros de la tabla izquierda.
+* RIGHT JOIN incluye todos los registros de la tabla derecha.
+* Permiten visualizar datos aunque no existan coincidencias.
+
+### Impacto del INNER JOIN
+
+* Muestra únicamente registros relacionados.
+* Elimina información sin coincidencias.
+* Mejora precisión de resultados.
+* Facilita análisis de datos relacionados.
+
+### Importancia de las Relaciones Uno a Muchos
+
+* Mejor organización de información.
+* Reducción de duplicidad de datos.
+* Integridad referencial.
+* Optimización de consultas y reportes.
