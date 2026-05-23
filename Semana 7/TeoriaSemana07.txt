@@ -1,0 +1,38 @@
+Semana 7: INSERT, DELETE, UPDATE y PIVOT en SQL Server
+Inserción de Datos (INSERT)
+
+El comando INSERT se utiliza para agregar nuevos registros dentro de una tabla de una base de datos. Este comando permite almacenar información nueva de manera organizada y eficiente. 
+Puede emplearse para insertar un solo registro o múltiples registros en una sola instrucción. Es una de las operaciones fundamentales en la manipulación de datos, ya que permite mantener 
+actualizada la información almacenada en el sistema.
+El uso adecuado de INSERT facilita la administración de grandes cantidades de datos y mejora la rapidez en el ingreso de información en aplicaciones y sistemas de gestión de bases de datos.
+
+
+Eliminación de Datos (DELETE)
+
+El comando DELETE se utiliza para eliminar registros existentes de una tabla. Su principal característica es que permite eliminar datos específicos mediante el uso de la cláusula WHERE, lo 
+que ayuda a controlar qué información será removida.
+Es importante utilizar cuidadosamente este comando, ya que una eliminación incorrecta puede ocasionar pérdida de información importante. Cuando se omite la cláusula WHERE, 
+todos los registros de la tabla son eliminados.
+El comando DELETE es muy útil para mantener limpia y actualizada la base de datos, eliminando información innecesaria, duplicada o desactualizada.
+
+
+Actualización de Datos (UPDATE)
+El comando UPDATE permite modificar datos existentes dentro de una tabla. Se utiliza cuando es necesario corregir, cambiar o actualizar información previamente almacenada.
+La cláusula SET indica los campos que serán modificados y la cláusula WHERE permite seleccionar qué registros se actualizarán. Sin el uso de WHERE, todos los registros de la tabla podrían verse afectados.
+El uso de UPDATE es esencial para mantener la precisión y consistencia de los datos dentro de un sistema de información.
+
+
+Uso de PIVOT
+La función PIVOT en SQL Server se utiliza para transformar filas en columnas dentro de una consulta. Su principal objetivo es mejorar la visualización y 
+organización de los datos, especialmente en reportes y análisis estadísticos.
+Mediante PIVOT, los datos pueden resumirse y mostrarse de forma más clara, facilitando la comparación de información y la toma de decisiones. Esta función 
+es muy utilizada en reportes de ventas, calificaciones, estadísticas y análisis empresariales.
+El uso de PIVOT permite convertir grandes volúmenes de datos en información más comprensible y estructurada.
+
+Importancia de INSERT, DELETE, UPDATE y PIVOT
+
+Las operaciones INSERT, DELETE y UPDATE forman parte del lenguaje de manipulación de datos (DML) y son fundamentales en la administración de bases de datos. 
+Estas operaciones permiten agregar, eliminar y modificar información de acuerdo con las necesidades del sistema.
+Por otro lado, la función PIVOT ayuda a presentar los datos de manera más ordenada y fácil de interpretar, contribuyendo a la elaboración de reportes y análisis más eficientes.
+El correcto uso de estas herramientas garantiza una mejor gestión de la información, mayor seguridad en el manejo de datos y un mejor rendimiento en las aplicaciones 
+que utilizan bases de datos SQL Server.
